@@ -1,0 +1,10 @@
+/* .card_container{
+    display: flex;
+} */
+.card{
+    width: 300px;
+   }
+   .product_img{
+       width: 100%;
+   }
+   
