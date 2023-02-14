@@ -10,9 +10,16 @@ function SingleProductPage() {
   const cartItems = useContext(CartItem)
   const {item, setItem} = cartItems
     function handleClick(){
-      item.push(productView)
+      const itemIndex =item.findIndex((itemIndex)=>itemIndex.id ===productView.id)
+    if(itemIndex >= 0){
+      item[itemIndex].cartQty+=1
+
+    }else{
+      const temp ={...productView, cartQty:1}
+      item.push(temp)
       setItem(item)
       sessionStorage.setItem("selectedProduct",JSON.stringify(item))
+    }
     }
 
   const [img , setImg]=useState(productView.images[0])

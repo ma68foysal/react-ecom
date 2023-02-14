@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
 
+import {useEffect,useState}from 'react'
 import ProductCase from '../util/ProductCase';
 import Product from './Product';
 import Cart from './shared/Cart';
@@ -22,9 +22,9 @@ function Products() {
       <ProductCase>
         
     {
-      products?.map((singleProduct,i)=> 
+      products?.map((singleProduct)=> 
       <>
-        <Product singleProduct={singleProduct} key={i} />
+        <Product singleProduct={singleProduct} key={singleProduct.id} />
         
       </>
       )}
