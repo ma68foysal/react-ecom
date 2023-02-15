@@ -1,43 +1,49 @@
-
-
 import React, { useEffect, useState } from 'react'
-import ReactCardSlider from 'react-card-slider-component';
-
-function sliderClick(e){
-    e.scrollLeft = e.scrollLeft + 500
-}
+import Slider from '../Slider'
+import SliderComponent from "react-slick";
 
 
 
 
 function CategorySlides() {
-    const[category,setCategory]=useState([])
-    const {products}=category
-    const [product, setPrtoduct]=useState([])
-    console.log(product);
-    
+  const style={
+    width:'50%',
+    backgroundColor:'darkgrey',
+    backgroundImage:"url('https://picsum.photos/600')",
+    backgroundRepeat:'no-repeat',
+    backgroundPosition:'center',
+    backgroundSize:"cover"
 
-    useEffect(()=>{
-    fetch('https://dummyjson.com/products/category/smartphones')
-    .then(res => res.json())
-     .then(data=> setCategory(data.products))
-    },[])
-     const slides = [
-        {image:'',title:"This is a title" ,description:"This is a description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/600/500",title:"This is a second title",description:"This is a second description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/700/600",title:"This is a third title",description:"This is a third description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/500/400",title:"This is a fourth title",description:"This is a fourth description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/200/300",title:"This is a fifth title",description:"This is a fifth description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/800/700",title:"This is a sixth title",description:"This is a sixth description",clickEvent:sliderClick},
-        {image:"https://picsum.photos/300/400",title:"This is a seventh title",description:"This is a seventh description",clickEvent:sliderClick},
-    ]
-    
+  }
+  const [category,setCategory]=useState([])
+  useEffect(()=>{
+    fetch('https://fakestoreapi.com/products/category/jewelery')
+    .then(res=>res.json())
+    .then(data=>setCategory(data))
+  },[])
+ 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    className:'slideBG'
+  };
+   
   return (
-    
-    <div style={{width:'77%',margin:'auto'}}>
-        {category?.products?.map((item)=><ReactCardSlider slides={item}/>)}
-    <ReactCardSlider slides={slides}/>
+    <div className='d-flex justify-content-between'>
+    <div style={style}>
+      
+    </div>
+    <div style={{width:'45%',height:'100%', margin:'auto',paddingTop:'20px',paddingBottom:'20px',}}>
+      <h3>TRENDING NOW</h3>
+      <SliderComponent {...settings}>
 
+        {category.map((item , i)=> <Slider key={item.id} item={item}/>)}
+      </SliderComponent>
+
+    </div>
     </div>
   )
 }
