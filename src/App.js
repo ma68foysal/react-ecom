@@ -11,6 +11,7 @@ import NavBar from './Components/shared/NavBar';
 import SingleProductPage from './Components/SingleProductPage';
 import CartInfoProvider from './context/CartInfoProvider';
 import CartItemProvider from './context/CartItemProvider';
+import CategoryProvider from './context/CategoryProvider';
 
 
 
@@ -22,6 +23,7 @@ function App() {
   
   return (
   <>
+  <CategoryProvider>
   <CartItemProvider>
    <CartInfoProvider>
     <Router>
@@ -36,6 +38,7 @@ function App() {
     </Router>
     </CartInfoProvider>
     </CartItemProvider>
+    </CategoryProvider>
     
   </>
 

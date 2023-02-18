@@ -1,8 +1,7 @@
 import React from 'react'
 import Hero from '../Hero'
-import Slider from '../Slider'
 import SliderTab from '../SliderTab'
-import CategorySlides from './CategorySlides'
+import CategorySlides from '../CategorySlides.jsx'
 
 function Home() {
   return (

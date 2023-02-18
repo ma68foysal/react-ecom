@@ -10,19 +10,21 @@ function Slider({item}) {
     return str;
   };
   
+  
   return (
     
 
       
       <div className="slide" key={item.id}>
-        <div className='slide-img'><img src={item.image} className="product_img" alt="..."/></div>
-         
+        <div className='slide-img'><img src={item.thumbnail} className="product_img" alt="..."/></div>
          <div className="card-body">
           <h5 className="card-title">{excerpt(item.title)}</h5>
           <p className="card-text">{excerpt(item.description)}</p>
           <div className='d-flex justify-content-between'>
           <p className='price slide-price'>{`$${item.price}`}</p>
+
           </div>
+          
         </div>
           </div>
           
