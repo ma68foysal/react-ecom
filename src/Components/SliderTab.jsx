@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ProductCategory } from '../context/context';
+import { Banner } from '../util/banner';
 import ProductByCategory from './ProductByCategory';
 
 
@@ -34,13 +35,13 @@ const ButtonGroup = styled.div`
 
    
 function SliderTab() {
-
-    const categoryContext=useContext(ProductCategory)
-    // console.log(categoryContext);
-    const {category,setCategory}=categoryContext
+    const [img ,setImg]=useState(Banner[0].img[2])
     
+    const categoryContext=useContext(ProductCategory)
+
+    const {category,setCategory}=categoryContext
+    console.log(category);
     const Category = category.slice(0,5)
-    console.log(Category[0]);
 
     const [active, setActive] = useState(Category[0]);
 
@@ -49,16 +50,22 @@ function SliderTab() {
       .then(res=>res.json())
       .then(data=>setCategory(data))
     },[])
-    
+    function hndle(type,i){
+      setActive(type)
+      setImg(Banner[0].img[i])
+    }
     return (
       <>
         <div style={{marginTop:'50px'}}>
         <ButtonGroup>
-            {Category.map(type => (
+            {Category.map((type,i) => (
             <Stab
                 key={type}
                 active={active === type}
-                onClick={() => setActive(type)}
+                onClick={() => 
+                hndle(type,i)
+                
+                }
             >
                 
                 {type}
@@ -67,9 +74,13 @@ function SliderTab() {
         </ButtonGroup>
       
         </div>
-         <ProductByCategory active={active}/> 
+         <ProductByCategory active={active} img={img}/> 
          </>
     );
+    }
+    ProductByCategory.defaultProps={
+      active:"smartphones"
+
     }
 // Usage
 export default SliderTab

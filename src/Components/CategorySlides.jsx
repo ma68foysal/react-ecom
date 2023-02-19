@@ -6,19 +6,11 @@ import SliderComponent from "react-slick";
 
 
 function CategorySlides() {
-  const style={
-    width:'50%',
-    backgroundColor:'darkgrey',
-    backgroundImage:"url('https://picsum.photos/600')",
-    backgroundRepeat:'no-repeat',
-    backgroundPosition:'center',
-    backgroundSize:"cover"
-
-  }
+ 
   const [category,setCategory]=useState([])
   // console.log(category)
   useEffect(()=>{
-    fetch('https://dummyjson.com/products/category/smartphones')
+    fetch('https://dummyjson.com/products/category/womens-watches')
     .then(res=>res.json())
     .then(data=>setCategory(data.products))
   },[])
@@ -39,7 +31,7 @@ function CategorySlides() {
       <h3>TRENDING NOW</h3>
       <SliderComponent {...settings}>
 
-        {category?.map((Item , i)=> <Slider key={Item.id} item={Item}/>)}
+        {category?.map((product , i)=> <Slider key={product.id} product={product}/>)}
       </SliderComponent>
 
     </div>
