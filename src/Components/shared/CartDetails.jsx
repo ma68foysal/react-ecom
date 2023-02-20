@@ -49,7 +49,7 @@ function CartDetails() {
     <Scrollbars style={{ width: '60%', height: 300,margin: '50px auto' }}>
      {item.length > 0 ?
      item.map((item , index)=>
-      <div className='cart_details'>
+      <div className='cart_details' key={item.id}>
        <div className='cartItemBox d-flex justify-content-between'>
          <div className='d-flex '>
            <img src={item.thumbnail} style={{width:'100px'}} alt="" />

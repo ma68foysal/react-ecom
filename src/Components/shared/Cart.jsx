@@ -26,9 +26,10 @@ function Cart() {
     navigate('/cart-details')
   }
   const [qty , setQty]=useState(1)
+  console.log(qty);
 
  
-  const Increament = (product,price) => {
+  const Increament = (product) => {
     const currElement =item.map(cureitem => cureitem.id === product.id ? {
       ...cureitem,
       cartQty: cureitem.cartQty +=1,
@@ -67,17 +68,12 @@ function Cart() {
           </div>
           <div className='d-flex align-items-center'>
             <div className='d-flex align-items-center ms-2 me-2'>
-              <button className='inrease' onClick={()=>Increament(cartProduct,cartProduct.price)}>+</button>
+              <button className='inrease' onClick={()=>Increament(cartProduct)}>+</button>
               <p className='m-0 p-1'>{cartProduct.cartQty}</p>
               <button className='decrease' onClick={()=>Decreament(cartProduct)}>-</button>
+              <p>{cartProduct.price}</p>
             </div>
             <div>
-              {/* {
-                qty?.map((currentQty,currentIndex)=>currentIndex === index?<p>{currentQty.cartQty}</p>:"hi"
-                
-                
-                )
-              } */}
               
               <button className='remove-btn' onClick={()=>removeItem(index)}>remove</button>
             </div>

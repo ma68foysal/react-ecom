@@ -50,7 +50,6 @@ function ProductByCategory({active,img}) {
     <div style={{width:'100%',height:'100%', margin:'auto',paddingBottom:'20px',}}
      className='d-flex flex-wrap'>
         <div style={{width:'40%',height:'100%',}}>
-            
             <div className='m-auto w-75'>
               <img className='w-100' src={img} alt="" />
             </div>
@@ -61,7 +60,7 @@ function ProductByCategory({active,img}) {
         {category?.map((product,i)=> 
         <>
         <div className="col-lg-4 mt-2 d-flex" key={product.id}>
-        <div className="category-slide" key={product.id}>
+        <div className="category-slide">
         <div className='slide-img'><img src={product.thumbnail} className="product_img" alt="..."/></div>
          <div className="card-body p-1">
           <h5 className="card-title">{excerpt(product.title)}</h5>

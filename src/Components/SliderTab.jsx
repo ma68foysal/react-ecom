@@ -40,7 +40,6 @@ function SliderTab() {
     const categoryContext=useContext(ProductCategory)
 
     const {category,setCategory}=categoryContext
-    console.log(category);
     const Category = category.slice(0,5)
 
     const [active, setActive] = useState(Category[0]);
@@ -56,7 +55,8 @@ function SliderTab() {
     }
     return (
       <>
-        <div style={{marginTop:'50px'}}>
+        <div style={{marginTop:'50px',display:'flex'}}>
+        <h2 className='ms-auto'>Shop By Category</h2>
         <ButtonGroup>
             {Category.map((type,i) => (
             <Stab

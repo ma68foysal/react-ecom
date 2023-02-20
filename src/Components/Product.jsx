@@ -42,7 +42,7 @@ function Product({singleProduct}) {
     <>
    
   <div className="col-lg-4" ke={singleProduct.id}>
-        <div className="card" key={singleProduct.id}>
+        <div className="card">
          <img src={singleProduct.thumbnail} className="product_img" alt="..."/>
          <div className="card-body">
           <h5 className="card-title">{singleProduct.title}</h5>
