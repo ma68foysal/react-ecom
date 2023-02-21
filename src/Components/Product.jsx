@@ -1,5 +1,5 @@
 import { type } from '@testing-library/user-event/dist/type'
-import React from 'react'
+import React, { useState } from 'react'
 import { useReducer } from 'react'
 import { useCallback } from 'react'
 import { useContext } from 'react'
@@ -13,13 +13,13 @@ import Cart from './shared/Cart'
 function Product({singleProduct}) {
   const cartItems = useContext(CartItem)
   const {item, setItem} = cartItems
- 
+  const[count , setCount]=useState(0)
+ console.log(count);
   
   function handleClick(){
     const itemIndex =item.findIndex((itemIndex)=>itemIndex.id ===singleProduct.id)
     if(itemIndex >= 0){
       item[itemIndex].cartQty+=1
-
     }else{
       const temp ={...singleProduct, cartQty:1}
       item.push(temp)

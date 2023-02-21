@@ -6,7 +6,7 @@ import ProductByCategory from './ProductByCategory';
 
 
 
-const Stab = styled.button `
+const TabBtn = styled.button `
   font-size: 20px;
   padding: 10px 20px;
   cursor: pointer;
@@ -49,27 +49,27 @@ function SliderTab() {
       .then(res=>res.json())
       .then(data=>setCategory(data))
     },[])
-    function hndle(type,i){
-      setActive(type)
+    function hndle(categoryName,i){
+      setActive(categoryName)
       setImg(Banner[0].img[i])
     }
     return (
       <>
-        <div style={{marginTop:'50px',display:'flex'}}>
+        <div className='category-tab'>
         <h2 className='ms-auto'>Shop By Category</h2>
         <ButtonGroup>
-            {Category.map((type,i) => (
-            <Stab
-                key={type}
-                active={active === type}
+            {Category.map((categoryName,i) => (
+            <TabBtn
+                key={categoryName}
+                active={active === categoryName}
                 onClick={() => 
-                hndle(type,i)
+                hndle(categoryName,i)
                 
                 }
             >
                 
-                {type}
-            </Stab>
+                {categoryName}
+            </TabBtn>
             ))}
         </ButtonGroup>
       

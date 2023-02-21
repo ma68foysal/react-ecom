@@ -12,7 +12,6 @@ function Cart() {
   const {openCart,setOpeanCart}=cart
   const cartItems = useContext(CartItem)
   const{item,setItem}= cartItems
-  
 
   function removeItem (index){
     const temp = item.filter( (filitem , i)=>i !== index )
@@ -26,14 +25,14 @@ function Cart() {
     navigate('/cart-details')
   }
   const [qty , setQty]=useState(1)
-  console.log(qty);
+ 
 
  
   const Increament = (product) => {
     const currElement =item.map(cureitem => cureitem.id === product.id ? {
       ...cureitem,
       cartQty: cureitem.cartQty +=1,
-      price:cureitem.cartQty*price
+      // price:cureitem.cartQty*price
       
     } : cureitem);
     setQty(currElement)

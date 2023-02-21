@@ -1,15 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { CartItem } from '../context/context';
-import { Banner } from '../util/banner';
+import '../Style/style.css'
 
 
 function ProductByCategory({active,img}) {
 
     const cartItems = useContext(CartItem)
-    const {item, setItem} = cartItems
-    // const [img ,setImg]=useState(Banner[0].img[2])
-    
+    const {item, setItem} = cartItems    
    
     const excerpt = (str) => {
         if (str.length > 20) {
@@ -18,12 +16,12 @@ function ProductByCategory({active,img}) {
         return str;
     };
 
-    const [category,setCategory]=useState([])
+    const [categoryProduct,setCategoryProduct]=useState([])
     
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/category/${active}`)
         .then(res=>res.json())
-        .then(data=>setCategory(data.products))
+        .then(data=>setCategoryProduct(data.products))
       },[active])
 
       
@@ -47,17 +45,15 @@ function ProductByCategory({active,img}) {
       
     }
   return (
-    <div style={{width:'100%',height:'100%', margin:'auto',paddingBottom:'20px',}}
-     className='d-flex flex-wrap'>
-        <div style={{width:'40%',height:'100%',}}>
+    <div className='d-flex flex-wrap'>
+        <div  className='category-banner-box'>
             <div className='m-auto w-75'>
               <img className='w-100' src={img} alt="" />
             </div>
         </div>
 
-        <div style={{width:'60%',height:'100%',borderLeft: '1px solid #555',
-    borderBottom: '1px solid #555',padding:'8px'}} className='d-flex flex-wrap'>
-        {category?.map((product,i)=> 
+        <div className='category-product d-flex flex-wrap'>
+        {categoryProduct?.map((product,i)=> 
         <>
         <div className="col-lg-4 mt-2 d-flex" key={product.id}>
         <div className="category-slide">
