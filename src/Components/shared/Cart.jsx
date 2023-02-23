@@ -12,7 +12,13 @@ function Cart() {
   const {openCart,setOpeanCart}=cart
   const cartItems = useContext(CartItem)
   const{item,setItem}= cartItems
-
+  // console.log(item);
+//   let sum = 0 
+// for(let i = 0; i <= item.length; i++ ) {
+    
+//     sum = i
+// }
+//  sum
   function removeItem (index){
     const temp = item.filter( (filitem , i)=>i !== index )
      return setItem(temp) 

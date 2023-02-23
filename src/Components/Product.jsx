@@ -13,8 +13,12 @@ import Cart from './shared/Cart'
 function Product({singleProduct}) {
   const cartItems = useContext(CartItem)
   const {item, setItem} = cartItems
+  
   const[count , setCount]=useState(0)
- console.log(count);
+
+ 
+
+
   
   function handleClick(){
     const itemIndex =item.findIndex((itemIndex)=>itemIndex.id ===singleProduct.id)
