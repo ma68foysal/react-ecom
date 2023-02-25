@@ -9,16 +9,20 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 function Cart() {
 
   const cart = useContext(CartInfo)
-  const {openCart,setOpeanCart}=cart
   const cartItems = useContext(CartItem)
-  const{item,setItem}= cartItems
-  // console.log(item);
-//   let sum = 0 
-// for(let i = 0; i <= item.length; i++ ) {
-    
-//     sum = i
-// }
-//  sum
+  const{item,setItem,}= cartItems
+  const {openCart,setOpeanCart,count, setCount}=cart
+ 
+  useEffect(()=>{
+    let sum = 0 
+    for(let i = 0; i <= item.length; i++ ) {
+        
+        sum = i
+    }
+    setCount(sum)
+ },[item])
+
+ 
   function removeItem (index){
     const temp = item.filter( (filitem , i)=>i !== index )
      return setItem(temp) 
@@ -40,6 +44,7 @@ function Cart() {
       cartQty: cureitem.cartQty +=1,
       // price:cureitem.cartQty*price
       
+      
     } : cureitem);
     setQty(currElement)
      
@@ -54,7 +59,7 @@ function Cart() {
      
    
   };
-
+  
   return (
     <> 
     <div className='cartBody' style={{ display:!openCart ?'none':'block'}} >

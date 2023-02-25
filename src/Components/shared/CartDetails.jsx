@@ -8,8 +8,7 @@ function CartDetails() {
   
   const cartItems = useContext(CartItem)
   const{item , setItem}=cartItems
-  
-  
+  const[totalPrice,setTotalPrice]=useState()
   const selectedProduct = JSON.parse(sessionStorage.getItem('selectedProduct'))
 
   
@@ -85,7 +84,10 @@ function CartDetails() {
       
        
     } 
-     </Scrollbars>     
+     </Scrollbars> 
+     <div className="container">
+   
+     </div>
     </div>
     
             

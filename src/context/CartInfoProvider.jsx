@@ -4,9 +4,13 @@ import { CartInfo } from './context'
 
 function CartInfoProvider({children}) {
     const [openCart,setOpeanCart]=useState(false)
+  const [count, setCount]=useState()
+
     const cartItems ={
-        openCart:openCart,
-        setOpeanCart:setOpeanCart
+        openCart,
+        setOpeanCart,
+        count,
+        setCount
         
     }
   return (

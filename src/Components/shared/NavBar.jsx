@@ -5,7 +5,8 @@ import { CartInfo } from '../../context/context'
 
 function NavBar() {
   const cartItem = useContext(CartInfo)
-  const {openCart,setOpeanCart}=cartItem
+  const {openCart,setOpeanCart,count, setCount}=cartItem
+  console.log(count);
   function handleCart(){
     setOpeanCart(!openCart)
   }
@@ -39,7 +40,7 @@ function NavBar() {
        
       </ul>
      <div>
-        <button onClick={handleCart}>Cart</button>
+        <button onClick={handleCart}>Cart <span>{count}</span></button>
      </div>
     </div>
   </div>

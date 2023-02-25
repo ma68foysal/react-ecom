@@ -7,7 +7,7 @@ import '../Style/style.css'
 function ProductByCategory({active,img}) {
 
     const cartItems = useContext(CartItem)
-    const {item, setItem} = cartItems    
+    const {item, setItem} = cartItems  
    
     const excerpt = (str) => {
         if (str.length > 20) {
@@ -26,7 +26,7 @@ function ProductByCategory({active,img}) {
 
       
     function handleClick(product){
-      const itemI =item.findI((itemI)=>itemI.id === product.id)
+      const itemI =item.findIndex((itemI)=>itemI.id === product.id)
       if(itemI >= 0){
         item[itemI].cartQty+=1
   
