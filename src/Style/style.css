@@ -77,6 +77,12 @@
     border: 1px solid lightcyan;
     border-radius: 16px;
 }
+.total-container{
+  width: 60%;
+}
+.cart-total-box{
+  border-top:2px solid red ;
+}
 .content{
     padding-left: 16px;
 }

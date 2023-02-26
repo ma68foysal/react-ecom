@@ -6,7 +6,7 @@ import { CartInfo } from '../../context/context'
 function NavBar() {
   const cartItem = useContext(CartInfo)
   const {openCart,setOpeanCart,count, setCount}=cartItem
-  console.log(count);
+ 
   function handleCart(){
     setOpeanCart(!openCart)
   }

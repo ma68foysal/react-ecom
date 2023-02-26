@@ -85,9 +85,23 @@ function CartDetails() {
        
     } 
      </Scrollbars> 
-     <div className="container">
-   
+     <div className="m-auto total-container">
+      <div className="cart-total-box d-flex ">
+
+      <div className="col-lg-6 text-end">
+      
+      </div>
+      <div className="col-lg-6 text-center d-flex justify-content-evenly pt-2">
+      <p>Total Price-</p>
+
+     {item.length > 0 ?
+     item.reduce((total,current)=>total+current.price*current.cartQty,0):''
+       }
+      </div>
+      </div>
+
      </div>
+     
     </div>
     
             
