@@ -9,6 +9,7 @@ import Cart from './Components/shared/Cart';
 import CartDetails from './Components/shared/CartDetails';
 import NavBar from './Components/shared/NavBar';
 import SingleProductPage from './Components/SingleProductPage';
+import Sumsung from './Components/Sumsung';
 import CartInfoProvider from './context/CartInfoProvider';
 import CartItemProvider from './context/CartItemProvider';
 import CategoryProvider from './context/CategoryProvider';
@@ -34,6 +35,8 @@ function App() {
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/cart-details' element={<CartDetails/>}/>
         <Route path='/single-product/:id' element={<SingleProductPage/>}/>
+        <Route path='/sumsung' element={<Sumsung/>}/>
+
       </Routes>
     </Router>
     </CartInfoProvider>

@@ -31,7 +31,7 @@ function NavBar() {
             Category
           </a>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Sumsung</a></li>
+            <li><Link to='/sumsung' className="dropdown-item" href="#">Sumsung</Link></li>
             <li><a className="dropdown-item" href="#">Apple</a></li>
             
             <li><a className="dropdown-item" href="#">MI</a></li>

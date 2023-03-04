@@ -35,14 +35,14 @@ function Cart() {
     navigate('/cart-details')
   }
   const [qty , setQty]=useState(1)
- 
+ console.log(qty);
 
  
   const Increament = (product) => {
     const currElement =item.map(cureitem => cureitem.id === product.id ? {
       ...cureitem,
       cartQty: cureitem.cartQty +=1,
-      // price:cureitem.cartQty*price
+      price:cureitem.cartQty*cureitem.price,
       
       
     } : cureitem);
@@ -52,8 +52,10 @@ function Cart() {
   };
   const Decreament = (product) => {
     const currElement =item.map(cureitem => cureitem.id === product.id ? {
+      
       ...cureitem,
-      cartQty:  cureitem.cartQty > 1 ? cureitem.cartQty -=1: cureitem.cartQty
+      cartQty:  cureitem.cartQty > 1 ? cureitem.cartQty -=1: cureitem.cartQty,
+      price:cureitem.cartQty>1 ?cureitem.cartQty*cureitem.price:cureitem.cartQty*cureitem.price
     } : cureitem);
     setQty(currElement)
      

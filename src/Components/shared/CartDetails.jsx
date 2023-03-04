@@ -45,9 +45,10 @@ function CartDetails() {
     <> 
     
     <div className='cart_Body' >
-    <Scrollbars style={{ width: '60%', height: 300,margin: '50px auto' }}>
      {item.length > 0 ?
-     item.map((item , index)=>
+    <Scrollbars style={{ width: '60%', height: 300,margin: '50px auto' }}>
+     {item.map((item , index)=>
+
       <div className='cart_details' key={item.id}>
        <div className='cartItemBox d-flex justify-content-between'>
          <div className='d-flex '>
@@ -73,7 +74,8 @@ function CartDetails() {
     
     </div>
     
-      )
+      )}
+    </Scrollbars>
       :<div className='container'>
       <div className=' cart-detals-box'>
         <div className='not-found text-center'>
@@ -84,25 +86,28 @@ function CartDetails() {
       
        
     } 
-     </Scrollbars> 
+      
+    
+     
+    </div>
+    {item.length > 0 ?
+     
      <div className="m-auto total-container">
       <div className="cart-total-box d-flex ">
 
       <div className="col-lg-6 text-end">
       
       </div>
-      <div className="col-lg-6 text-center d-flex justify-content-evenly pt-2">
+      <div className="col-lg-6 text-center d-flex justify-content-between pt-2">
       <p>Total Price-</p>
+      {item.reduce((total,current)=>total+current.price*current.cartQty,0)}
 
-     {item.length > 0 ?
-     item.reduce((total,current)=>total+current.price*current.cartQty,0):''
-       }
       </div>
       </div>
 
-     </div>
+     </div>:""
      
-    </div>
+    }
     
             
      
