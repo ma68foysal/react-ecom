@@ -13,6 +13,7 @@ import Sumsung from './Components/Sumsung';
 import CartInfoProvider from './context/CartInfoProvider';
 import CartItemProvider from './context/CartItemProvider';
 import CategoryProvider from './context/CategoryProvider';
+import Counter from './services/Counter';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/cart-details' element={<CartDetails/>}/>
         <Route path='/single-product/:id' element={<SingleProductPage/>}/>
         <Route path='/sumsung' element={<Sumsung/>}/>
+        <Route path='/apple' element={<Counter/>}/>
 
       </Routes>
     </Router>

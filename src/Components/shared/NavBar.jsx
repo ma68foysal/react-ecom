@@ -32,7 +32,7 @@ function NavBar() {
           </a>
           <ul className="dropdown-menu">
             <li><Link to='/sumsung' className="dropdown-item" href="#">Sumsung</Link></li>
-            <li><a className="dropdown-item" href="#">Apple</a></li>
+            <li><Link className="dropdown-item" to='/apple'>Apple</Link></li>
             
             <li><a className="dropdown-item" href="#">MI</a></li>
           </ul>
