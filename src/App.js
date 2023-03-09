@@ -5,6 +5,7 @@ import { BrowserRouter as Router , Routes,Route } from 'react-router-dom';
 import Home from './Components/Pages/Home';
 import Shop from './Components/Pages/Shop';
 import Products from './Components/Products';
+import Rtk from './Components/RTK/Rtk';
 import Cart from './Components/shared/Cart';
 import CartDetails from './Components/shared/CartDetails';
 import NavBar from './Components/shared/NavBar';
@@ -38,6 +39,7 @@ function App() {
         <Route path='/single-product/:id' element={<SingleProductPage/>}/>
         <Route path='/sumsung' element={<Sumsung/>}/>
         <Route path='/apple' element={<Counter/>}/>
+        <Route path='/mi' element={<Rtk/>}/>
 
       </Routes>
     </Router>

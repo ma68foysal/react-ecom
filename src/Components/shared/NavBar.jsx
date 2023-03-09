@@ -34,7 +34,7 @@ function NavBar() {
             <li><Link to='/sumsung' className="dropdown-item" href="#">Sumsung</Link></li>
             <li><Link className="dropdown-item" to='/apple'>Apple</Link></li>
             
-            <li><a className="dropdown-item" href="#">MI</a></li>
+            <li><Link className="dropdown-item" to='/mi'>MI</Link></li>
           </ul>
         </li>
        
