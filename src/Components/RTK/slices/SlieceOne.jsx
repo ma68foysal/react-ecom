@@ -16,5 +16,6 @@ import {createSlice} from '@reduxjs/toolkit'
         }
     }
  })
- export default SliseOne
+ export default SliseOne.reducer
  export   const {Increament, Decreament} = SliseOne.actions
+

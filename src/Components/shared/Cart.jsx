@@ -35,7 +35,7 @@ function Cart() {
     navigate('/cart-details')
   }
   const [qty , setQty]=useState(1)
- console.log(qty);
+ 
 
  
   const Increament = (product) => {

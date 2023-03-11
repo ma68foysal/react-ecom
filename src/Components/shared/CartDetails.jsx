@@ -46,7 +46,7 @@ function CartDetails() {
     
     <div className='cart_Body' >
      {item.length > 0 ?
-    <Scrollbars style={{ width: '60%', height: 300,margin: '50px auto' }}>
+    <Scrollbars style={{ width: '60%', height: 300,margin: '50px auto 0px auto',border:' 2px solid red' }}>
      {item.map((item , index)=>
 
       <div className='cart_details' key={item.id}>
