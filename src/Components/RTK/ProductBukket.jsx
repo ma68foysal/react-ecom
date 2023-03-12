@@ -36,7 +36,7 @@ function ProductBukket() {
            <p className="card-text">{product.description}</p>
            <div className='d-flex justify-content-between'>
            <p className='price'>{`$${product.price}`}</p>
-           <p className='price'>pp</p>
+           <p className='price'>{product.rating}</p>
            </div>
          </div>
            </div>
