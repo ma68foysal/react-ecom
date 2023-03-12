@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { CartItem } from '../context/context'
 import '../Style/style.css'
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 
 function SingleProductPage() {
   
@@ -51,7 +51,7 @@ function SingleProductPage() {
            }
           </div>
        <div className="ms-2" key={productView.id}>
-       <ReactImageMagnify {...{
+       {/* <ReactImageMagnify {...{
               smallImage: {
                   alt: 'Wristwatch by Ted Baker London',
                   isFluidWidth: true,
@@ -63,7 +63,7 @@ function SingleProductPage() {
                   height: 1200
               },
               isActivatedOnTouch:true
-          }} />
+          }} /> */}
        
          </div>
          {/* ./card */}
